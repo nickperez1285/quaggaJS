@@ -28,6 +28,12 @@ $(function() {
         attachListeners: function() {
             var self = this;
 
+            $("#add").on("click", function(e) {
+                e.preventDefault();
+                alert(hi);
+                  });
+
+
             $(".controls").on("click", "button.stop", function(e) {
                 e.preventDefault();
                 Quagga.stop();
@@ -56,6 +62,7 @@ $(function() {
                 add_button.innerHTML = "Confirm Purchase"
 
                 var $li = $('<li><div class="thumbnail"><div class="imgWrapper"><img /></div><div class="caption"><h4 class="code"></h4></div></div></li>');
+                $li.appendChild(add_button)
 
                 $li.find("img").attr("src", result.frame);
                 $li.find("h4.code").html(result.codeResult.code + " (" + result.codeResult.format + ")");
